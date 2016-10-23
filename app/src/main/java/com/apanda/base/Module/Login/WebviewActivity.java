@@ -3,6 +3,7 @@ package com.apanda.base.Module.Login;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.os.Message;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -36,6 +37,11 @@ public class WebviewActivity extends BaseActivity {
         context.startActivity(mIntent);
     }
 
+
+    @Override
+    protected void refresh(Message msg) {
+
+    }
 
     @Override
     public int getLayoutId() {

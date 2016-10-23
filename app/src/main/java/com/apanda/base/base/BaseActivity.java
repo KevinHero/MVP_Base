@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -16,6 +18,7 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.apanda.base.R;
+import com.apanda.base.Utils.HttpDownloader;
 import com.apanda.base.Utils.SwipeBackUtils.SwipeWindowHelper;
 import com.apanda.base.Utils.TUtil;
 import com.apanda.base.Utils.ToastUtils;
@@ -25,8 +28,11 @@ import com.apanda.base.base.baseapp.AppManager;
 import com.apanda.base.base.baserx.RxManager;
 import com.apanda.base.base.daynightmodeutils.ChangeModeController;
 
+import java.io.IOException;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import butterknife.ButterKnife;
 import rx.Subscription;
@@ -102,7 +108,51 @@ public abstract class BaseActivity<T extends BasePresenter, E extends BaseModel>
         }
         this.initPresenter();
         this.initView();
+
+        executorService = Executors.newFixedThreadPool(2);
+
+
+        initView();
+
     }
+
+    protected abstract void refresh(Message msg);
+
+    private ExecutorService executorService;
+
+
+    protected final Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+
+
+            refresh(msg);
+        }
+
+    };
+
+    /**
+     * 开启新线程请求班结数据网络
+     */
+    protected void startNewThreadRequestData(final String url, final int REQUESTCODE) {
+        executorService.execute(new Runnable() {
+            @Override
+            public void run() {
+                String json = null;
+                try {
+                    json = HttpDownloader.getInstance().run(url);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                Message msg = handler.obtainMessage();
+                msg.what = REQUESTCODE;
+                msg.obj = json;
+                msg.sendToTarget();
+
+            }
+        });
+    }
+
 
     /**
      * 设置layout前配置

@@ -1,5 +1,6 @@
 package com.apanda.base.Module.Login;
 
+import android.os.Message;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
@@ -53,7 +54,10 @@ public class SignupActivity extends BaseActivity {
     TextView _TvGetcode;
 
 
+    @Override
+    protected void refresh(Message msg) {
 
+    }
 
     @Override
     public int getLayoutId() {

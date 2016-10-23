@@ -1,5 +1,6 @@
 package com.apanda.base.Module.Gank.activity;
 
+import android.os.Message;
 import android.widget.ListView;
 
 import com.apanda.base.Entity.GankBean;
@@ -23,6 +24,11 @@ public class GankActivity extends BaseActivity<GankPresenter, GankModel> impleme
         _LvItems.setAdapter(new GankAdapter(_gankBean));
     }
 
+
+    @Override
+    protected void refresh(Message msg) {
+
+    }
 
     @Override
     public int getLayoutId() {

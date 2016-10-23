@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
+import android.os.Message;
 import android.view.animation.AccelerateInterpolator;
 import android.widget.TextView;
 
@@ -26,6 +27,11 @@ public class StartupActivity extends BaseActivity {
         return false;
     }
 
+
+    @Override
+    protected void refresh(Message msg) {
+
+    }
 
     @Override
     public int getLayoutId() {
