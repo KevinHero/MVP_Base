@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@android:color/white"
     android:orientation="vertical"
-    tools:context=".Module.Welcome.StartupActivity">
+    tools:context=".Module.Gank.activity.StartupActivity">
 
 
     <!--中间logo-->

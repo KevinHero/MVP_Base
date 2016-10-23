@@ -21,7 +21,7 @@
             android:textColor="@color/material_blue_grey_80"
             android:textSize="18sp"/>
 
-        <com.apanda.base.Module.Gank.io.customview.NestedListView
+        <com.apanda.base.Widget.NestedListView
             android:id="@+id/nestedlistview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

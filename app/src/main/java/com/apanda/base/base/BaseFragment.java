@@ -171,6 +171,4 @@ public abstract  class BaseFragment<T extends BasePresenter, E extends BaseModel
         mRxManager.clear();
     }
 
-
-
 }

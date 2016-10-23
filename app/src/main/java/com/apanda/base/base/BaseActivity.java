@@ -96,6 +96,7 @@ public abstract class BaseActivity<T extends BasePresenter, E extends BaseModel>
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setSavedInstanceState(savedInstanceState);
+        getWindow().requestFeature(Window.FEATURE_NO_TITLE);
         mRxManager = new RxManager();
         doBeforeSetcontentView();
         setContentView(getLayoutId());
@@ -110,9 +111,6 @@ public abstract class BaseActivity<T extends BasePresenter, E extends BaseModel>
         this.initView();
 
         executorService = Executors.newFixedThreadPool(2);
-
-
-        initView();
 
     }
 
@@ -309,9 +307,9 @@ public abstract class BaseActivity<T extends BasePresenter, E extends BaseModel>
      */
     protected void SetStatusBarColor() {
         StatusBarCompat.setStatusBarColor(this, ContextCompat.getColor(this, R.color.colorPrimary));
-        setStatusBarLightMode(getWindow(), true);
-        FlymeSetStatusBarLightMode(getWindow(), true);
-        MIUISetStatusBarLightMode(getWindow(), true);
+//        setStatusBarLightMode(getWindow(), true);
+//        FlymeSetStatusBarLightMode(getWindow(), true);
+//        MIUISetStatusBarLightMode(getWindow(), true);
     }
 
     /**
@@ -487,7 +485,7 @@ public abstract class BaseActivity<T extends BasePresenter, E extends BaseModel>
         }
 
         setSupportActionBar(toolbar);
-        toolbar.setNavigationIcon(R.drawable.nav_selector);
+        toolbar.setNavigationIcon(R.mipmap.ic_back);
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
 
     }

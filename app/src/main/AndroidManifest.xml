@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".Module.Welcome.StartupActivity"
+            android:name=".Module.Gank.activity.StartupActivity"
             android:theme="@style/AppTheme.Launcher"
             android:windowDisablePreview="true">
             <intent-filter>
@@ -22,11 +22,31 @@
             </intent-filter>
         </activity>
         <activity android:name=".Widget.imagePager.BigImagePagerActivity"/>
-        <activity android:name=".Module.Gank.activity.GankActivity"/>
-
+        <activity android:name=".Module.Gank.activity.HomeActivity"/>
         <activity android:name=".Module.Login.WebviewActivity"/>
-        <activity android:name=".Module.Login.SignupActivity"/>
-
+        <activity android:name=".Module.Gank.activity.SignupActivity"/>
+        <activity
+            android:name=".Module.Gank.activity.MainActivity"
+            android:theme="@style/AppTheme"/>
+        <activity
+            android:name=".Module.Gank.activity.CategoryActivity"
+            android:theme="@style/AppTheme"/>
+        <activity
+            android:name=".Module.Gank.activity.SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:theme="@style/AppTheme"/>
+        <activity
+            android:name=".Widget.WebviewActivity"
+            android:theme="@style/AppTheme"/>
+        <activity
+            android:name=".Module.Gank.activity.HistoryActivity"
+            android:theme="@style/AppTheme"/>
+        <activity android:name=".Module.Gank.activity.HistoryListActivity"/>
+        <activity android:name=".Module.Gank.activity.HistoryTodayActivity"/>
+        <activity android:name=".Module.Gank.activity.HuabanGirlActivity"/>
+        <activity android:name=".Module.Gank.activity.BeautyActivity"/>
+        <activity android:name=".activity.HomeActivity">
+        </activity>
     </application>
 
 </manifest>
