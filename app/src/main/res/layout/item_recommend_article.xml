@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/white"
+              android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_back_img"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@color/red_main"
+            android:scaleType="centerCrop"/>
+
+        <ImageView
+            android:id="@+id/iv_header"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="174dp"
+            android:src="@drawable/bule_circle_xx"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="4dp"
+        android:text="ge比老王"
+        android:textColor="@color/coupon_bg_light_blue"
+        android:textSize="12sp"/>
+
+    <TextView
+
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="8dp"
+        android:text="马尔代夫怎么住"
+        android:textColor="#333333"
+        android:textSize="17sp"/>
+
+    <TextView
+        android:id="@+id/tv_intro"
+        android:layout_width="276dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:text="知道怎么玩更需要知道怎么住的舒服，小编教你在夜
+晚卸下一身的疲惫..."
+        android:textColor="#999999"
+        android:textSize="15sp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="38dp"
+        android:layout_marginTop="18dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_collocts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="12dp"
+            android:drawableLeft="@mipmap/shengfen_ic_shoucang"
+            android:drawablePadding="4dp"
+            android:text="145"
+            android:textColor="#666666"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:id="@+id/tv_shares"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:drawableLeft="@mipmap/shengfen_ic_zhuanfa"
+            android:drawablePadding="4dp"
+            android:text="345"
+            android:textColor="#666666"
+            android:textSize="14sp"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

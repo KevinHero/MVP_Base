@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ffffff</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#1DC9D3</color>
+
+    <color name="actionbar_bg">#333333</color>
+    <color name="transparent">#00000000</color>
+    <!-- black 87%不透明度 -->
+    <!-- black 54%不透明度 -->
+    <!-- black 26%不透明度 -->
+    <color name="transparent_semi_ot">#1f000000</color>
+    <!-- black 12%不透明度 -->
+    <!-- white 54%不透明度 -->
+    <color name="white">#ffffff</color>
+    <!-- 纯白色 -->
+    <color name="black">#000000</color>
+    <!-- 纯黑色 -->
+    <color name="title_color">#110F18</color>
+
+    <!--#909090 100%-->
+    <color name="gray">#888888</color>
+    <!--  button color（green）disable -->
+    <!--  background -->
+    <color name="blue">#3E7EC8</color>
+    <color name="evl_red">#ec5b84</color>
+    <!-- 分享弹窗中红色字体(黄色背景) -->
+    <!-- 分享弹窗中黄色字体(红色背景) -->
+    <!-- 37B89A -->
+    <!--  button color（green）normal -->
+    <!--  button color（green）pressed -->
+    <!-- 079471 -->
+    <!-- 058564 -->
+    <color name="red_main">#ff693b</color>
+    <!-- main button color（red）normal 没说明的红色都用这个 -->
+    <!-- main button color（red）pressed -->
+
+    <color name="coupon_bg_light_blue">#FF1DC9D3</color>
+    <color name="coupon_bg_light_blue_light_x">#331DC9D3</color>
+
+
+    <!-- floatingActionButton -->
+    <color name="gray_bit">#b2b2b2</color>
+
+    <color name="ab__gray_light">#ffffff</color>
+    <color name="cardview_light_background">#FFFAFAFA</color>
+
+
+    <!--<color name="colorPrimary">#da4d26</color>-->
+    <!--<color name="colorPrimaryDark">#a93409</color>-->
+    <!--<color name="colorAccent">#FF4081</color>-->
+
+
+    <color name="float_transparent">#00000000</color>
+    <color name="sweet_dialog_bg_color">#FFFFFF</color>
+    <color name="button_text_color">#FFFFFF</color>
+    <color name="gray_btn_bg_color">#D0D0D0</color>
+    <color name="gray_btn_bg_pressed_color">#B6B6B6</color>
+    <color name="blue_btn_bg_color">#AEDEF4</color>
+    <color name="blue_btn_bg_pressed_color">#96BFD2</color>
+    <color name="red_btn_bg_color">#DD6B55</color>
+    <color name="red_btn_bg_pressed_color">#CD5B55</color>
+    <color name="error_stroke_color">#F27474</color>
+    <color name="success_stroke_color">#A5DC86</color>
+    <color name="trans_success_stroke_color">#33A5DC86</color>
+    <color name="warning_stroke_color">#F8BB86</color>
+    <color name="text_color">#575757</color>
+    <color name="material_blue_grey_80">#ff37474f</color>
+    <color name="material_blue_grey_90">#ff263238</color>
+    <color name="material_blue_grey_95">#ff21272b</color>
+    <color name="material_deep_teal_20">#ff80cbc4</color>
+    <color name="material_deep_teal_50">#ff009688</color>
+
+
+    <!--<color name="colorPrimary">#FA7C20</color>-->
+    <!--<color name="colorPrimaryDark">#FA7C20</color>-->
+    <!--<color name="colorAccent">#FA7C20</color>-->
+    <!--白天主题-->
+    <color name="day_backgroup_color">#FFFFFFFF</color>
+    <color name="day_one_text_color">#FF000000</color>
+    <color name="day_two_text_color">#c9000000</color>
+    <color name="day_three_text_color">#8A9599</color>
+    <!--夜间主题-->
+    <color name="night_backgroup_color">#3F3F3F</color>
+    <color name="night_one_text_color">#FFbbbbbb</color>
+    <color name="night_two_text_color">#8A9599</color>
+    <color name="night_there_text_color">#8A9599</color>
+    <!-- app主色调-->
+    <color name="main_color">#FA7C20</color>
+
+    <color name="red">#FFFF0000</color>
+
+    <!--<color name="blue">#5CA3E5</color>-->
+    <color name="toast_white">#ffffff</color>
+    <color name="toast_stroke_gray">#99d4d4d4</color>
+
+
+</resources>
