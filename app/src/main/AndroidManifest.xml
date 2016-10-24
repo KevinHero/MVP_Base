@@ -23,7 +23,7 @@
         </activity>
         <activity android:name=".Widget.imagePager.BigImagePagerActivity"/>
         <activity android:name=".Module.Gank.activity.HomeActivity"/>
-        <activity android:name=".Module.Login.WebviewActivity"/>
+
         <activity android:name=".Module.Gank.activity.SignupActivity"/>
         <activity
             android:name=".Module.Gank.activity.MainActivity"
@@ -45,8 +45,8 @@
         <activity android:name=".Module.Gank.activity.HistoryTodayActivity"/>
         <activity android:name=".Module.Gank.activity.HuabanGirlActivity"/>
         <activity android:name=".Module.Gank.activity.BeautyActivity"/>
-        <activity android:name=".activity.HomeActivity">
-        </activity>
+
+
     </application>
 
 </manifest>

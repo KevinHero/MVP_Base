@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
 
+import com.apanda.base.Module.Gank.fragment.FragmentGirls;
 import com.apanda.base.Module.Gank.fragment.ItemFragment;
 import com.apanda.base.Module.Gank.fragment.TodayFragment;
 import com.apanda.base.R;
@@ -53,13 +54,13 @@ public class HomeActivity extends BaseActivity {
         initToolBar(_Toolbar, "干活");
         _fragments.add(TodayFragment.newInstance("今日", ""));
         _fragments.add(ItemFragment.newInstance("Android", ""));
-        _fragments.add(ItemFragment.newInstance("IOS", ""));
-        _fragments.add(ItemFragment.newInstance("福利", ""));
-        _fragments.add(ItemFragment.newInstance("随机", ""));
-        _fragments.add(ItemFragment.newInstance("视频", ""));
-
+        _fragments.add(ItemFragment.newInstance("iOS", ""));
+        _fragments.add(new FragmentGirls());
+        _fragments.add(ItemFragment.newInstance("all", ""));
+        _fragments.add(ItemFragment.newInstance("休息视频", ""));
         BaseFragmentAdapter fragmentAdapter = new BaseFragmentAdapter(getSupportFragmentManager(), _fragments, title);
         _ViewPager.setAdapter(fragmentAdapter);
+        _ViewPager.setOffscreenPageLimit(2);
         _Tabs.setupWithViewPager(_ViewPager);
         TabHostUtils.dynamicSetTabLayoutMode(_Tabs);
         setPageChangeListener();

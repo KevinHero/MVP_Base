@@ -2,14 +2,15 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_margin="16dp"
+    android:layout_height="wrap_content">
 
     <ImageView
         android:scaleType="centerCrop"
         android:id="@+id/iv_pic"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/transparent"/>
+        android:layout_height="180dp"
+        android:background="@color/coupon_bg_light_blue_light_x"/>
 
     <TextView
         android:id="@+id/tv_name"

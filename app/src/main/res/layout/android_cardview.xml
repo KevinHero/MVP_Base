@@ -2,7 +2,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
+    android:elevation="@dimen/recovery_default_margin_8dp"
+    android:layout_margin="16dp"
 
     >
 

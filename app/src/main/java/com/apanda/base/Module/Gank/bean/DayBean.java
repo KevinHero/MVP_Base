@@ -20,7 +20,6 @@ public class DayBean implements Serializable {
     public List<String> category;
 
     public static class ResultsEntity implements Serializable {
-
         public List<ItemBean> Android;
         public List<ItemBean> iOS;
         public List<ItemBean> 休息视频;
@@ -29,8 +28,6 @@ public class DayBean implements Serializable {
         public List<ItemBean> 瞎推荐;
         public List<ItemBean> App;
         public List<ItemBean> 前端;
-
-
     }
 
 
