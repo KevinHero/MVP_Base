@@ -62,9 +62,10 @@ public class BigImagePagerActivity extends BaseActivity {
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
-            BigImagePagerActivity.this.finish();
+
             BigImagePagerActivity.this.overridePendingTransition(R.anim.fade_in,
                     R.anim.fade_out);
+            BigImagePagerActivity.this.finish();
             return true;
         }
         return super.onKeyDown(keyCode, event);

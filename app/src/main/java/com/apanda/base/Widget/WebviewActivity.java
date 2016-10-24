@@ -38,7 +38,7 @@ public class WebviewActivity extends BaseActivity implements View.OnClickListene
 
     @Override
     public int getLayoutId() {
-        return 0;
+        return R.layout.activity_webview;
     }
 
     @Override
@@ -97,10 +97,7 @@ public class WebviewActivity extends BaseActivity implements View.OnClickListene
             }
         });
 
-
         webView.loadUrl(data);
-
-
     }
 
     private boolean ischecked;
@@ -176,7 +173,12 @@ public class WebviewActivity extends BaseActivity implements View.OnClickListene
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if ((keyCode == KeyEvent.KEYCODE_BACK)) {
-            webView.goBack(); //返回上一个页面
+            if (webView.canGoBack()) {
+                webView.goBack(); //返回上一个页面
+            } else {
+                onBackPressed();
+            }
+
             return true;
         }
         return false;

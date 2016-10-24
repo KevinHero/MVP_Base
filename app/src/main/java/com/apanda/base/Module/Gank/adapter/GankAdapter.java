@@ -8,9 +8,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.apanda.base.Entity.GankBean;
-import com.apanda.base.Module.Login.WebviewActivity;
 import com.apanda.base.R;
 import com.apanda.base.Utils.PicassoImageLoader;
+import com.apanda.base.Widget.WebviewActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -67,17 +67,18 @@ public class GankAdapter extends BaseAdapter {
         v._TvCato.setText(results.type);
         v._TvTime.setText(results.publishedAt);
         v._TvAuth.setText(results.who);
-        if (results.images != null && results.images.size() > 0) {  v._IvImg.setVisibility(View.VISIBLE);
+        if (results.images != null && results.images.size() > 0) {
+            v._IvImg.setVisibility(View.VISIBLE);
 
             new PicassoImageLoader().onDisplayImage(_viewGroup.getContext(), v._IvImg, results.images.get(0));
-        }else{
+        } else {
             v._IvImg.setVisibility(View.GONE);
         }
 
         _view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View _view) {
-                WebviewActivity.startActivity(_viewGroup.getContext(),results.desc , results.url);
+                WebviewActivity.startActivity(_viewGroup.getContext(), results.url, results.desc);
             }
         });
         return _view;

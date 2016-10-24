@@ -29,7 +29,7 @@ public class HomeActivity extends BaseActivity {
     @Bind(R.id.view_pager)
     ViewPager _ViewPager;
 
-    String title[] = {"今日", "Android", "IOS", "福利", "随机", "视频"};
+    String title[] = {"今日", "安卓", "IOS", "福利", "随机", "视频"};
 
     @Override
     protected void refresh(Message msg) {

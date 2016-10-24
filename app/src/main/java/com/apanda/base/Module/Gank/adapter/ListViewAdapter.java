@@ -55,7 +55,8 @@ public class ListViewAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
 
-                WebviewActivity.startActivity(mContext, itemBeans.url, itemBeans.type);
+                String title = itemBeans.type + "-" + (itemBeans.desc);
+                WebviewActivity.startActivity(mContext, itemBeans.url, title);
                 tv_read_status.setVisibility(View.VISIBLE);
             }
         });

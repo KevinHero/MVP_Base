@@ -10,8 +10,8 @@ import android.widget.TextView;
 
 import com.apanda.base.Module.Gank.bean.DayBean;
 import com.apanda.base.Module.Gank.bean.ItemBean;
-import com.apanda.base.Widget.NestedListView;
 import com.apanda.base.R;
+import com.apanda.base.Widget.NestedListView;
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
@@ -71,7 +71,7 @@ public class ListViewMainAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(int position, View convertView, final ViewGroup parent) {
 
         final List<ItemBean> itemBeans = (List<ItemBean>) list.get(position);
 
@@ -98,6 +98,8 @@ public class ListViewMainAdapter extends BaseAdapter {
             nestedListView.setAdapter(new ListViewAdapter(mContext, itemBeans));
         }
         textView.setText(itemBeans.get(0).type);
+
+
 
         return convertView;
 

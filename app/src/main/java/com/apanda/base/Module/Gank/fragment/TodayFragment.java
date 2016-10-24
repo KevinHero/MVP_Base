@@ -2,7 +2,6 @@ package com.apanda.base.Module.Gank.fragment;
 
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
-import android.widget.ListView;
 
 import com.apanda.base.Entity.GankBean;
 import com.apanda.base.Module.Gank.adapter.ListViewMainAdapter;
@@ -13,6 +12,7 @@ import com.apanda.base.Module.Gank.model.GankModel;
 import com.apanda.base.Module.Gank.presenter.GankPresenter;
 import com.apanda.base.R;
 import com.apanda.base.Utils.logger.L;
+import com.apanda.base.Widget.NestedListView;
 import com.apanda.base.base.BaseFragment;
 
 import butterknife.Bind;
@@ -26,7 +26,7 @@ public class TodayFragment extends BaseFragment<GankPresenter, GankModel> implem
     @Bind(R.id.vp_title)
     ViewPager _VpTitle;
     @Bind(R.id.lv_main)
-    ListView _LvMain;
+    NestedListView _LvMain;
 
     private String mParam1;
     private String mParam2;
@@ -58,12 +58,13 @@ public class TodayFragment extends BaseFragment<GankPresenter, GankModel> implem
 
     @Override
     protected void initView() {
+        startProgressDialog();
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-        // mPresenter.lodeGankBeanRequest();
-        //mPresenter.loadHistoty();
+        mPresenter.lodeGankBeanRequest();
+        mPresenter.loadHistoty();
     }
 
 
@@ -87,6 +88,7 @@ public class TodayFragment extends BaseFragment<GankPresenter, GankModel> implem
     @Override
     public void returnDayBean(DayBean _dayBean) {
         _LvMain.setAdapter(new ListViewMainAdapter(getContext(), _dayBean, false));
+        stopProgressDialog();
     }
 
     @Override
