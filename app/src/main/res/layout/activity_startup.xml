@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@drawable/_90174ffc"
     android:orientation="vertical"
     tools:context=".Module.Gank.activity.StartupActivity">
 
@@ -47,5 +47,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="142dp"
         android:text="干"
+        android:textColor="@android:color/white"
         android:textSize="80sp"/>
 </RelativeLayout>

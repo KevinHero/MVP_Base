@@ -7,6 +7,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:paddingBottom="16dp"
+    android:layout_margin="@dimen/recovery_default_margin_8dp"
+    android:background="@drawable/white_graylight_corner_5_selecter"
+    android:elevation="@dimen/recovery_default_margin_8dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".Module.Gank.activity.MainActivity"
     tools:showIn="@layout/app_bar_main">
