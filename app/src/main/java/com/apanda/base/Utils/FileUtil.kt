@@ -1,0 +1,176 @@
+package com.apanda.base.Utils
+
+import android.content.Context
+import android.database.Cursor
+import android.net.Uri
+import android.provider.MediaStore
+import android.provider.OpenableColumns
+import android.util.Log
+
+import java.io.File
+import java.io.FileNotFoundException
+import java.io.FileOutputStream
+import java.io.IOException
+import java.io.InputStream
+import java.io.OutputStream
+
+/**
+ * 文件处理util
+ */
+object FileUtil {
+    internal val FILES_PATH = "Compressor"
+    private val EOF = -1
+    private val DEFAULT_BUFFER_SIZE = 1024 * 4
+
+    @Throws(IOException::class)
+    fun from(context: Context, uri: Uri): File {
+        val inputStream = context.contentResolver.openInputStream(uri)
+        val fileName = getFileName(context, uri)
+        val splitName = splitFileName(fileName)
+        var tempFile = File.createTempFile(splitName[0], splitName[1])
+        tempFile = rename(tempFile, fileName)
+        tempFile.deleteOnExit()
+        var out: FileOutputStream? = null
+        try {
+            out = FileOutputStream(tempFile)
+        } catch (e: FileNotFoundException) {
+            e.printStackTrace()
+        }
+
+        if (inputStream != null) {
+            copy(inputStream, out)
+            inputStream.close()
+        }
+
+        if (out != null) {
+            out.close()
+        }
+        return tempFile
+    }
+
+    /**
+     * 获取文件名
+     * @param fileName
+     * *
+     * @return
+     */
+    internal fun splitFileName(fileName: String): Array<String> {
+        var name = fileName
+        var extension = ""
+        val i = fileName.lastIndexOf(".")
+        if (i != -1) {
+            name = fileName.substring(0, i)
+            extension = fileName.substring(i)
+        }
+
+        return arrayOf(name, extension)
+    }
+
+    /**
+     * 根据uri获取文件路径
+     * @param context
+     * *
+     * @param uri
+     * *
+     * @return
+     */
+    internal fun getFileName(context: Context, uri: Uri): String {
+        var result: String? = null
+        if (uri.scheme == "content") {
+            val cursor = context.contentResolver.query(uri, null, null, null, null)
+            try {
+                if (cursor != null && cursor.moveToFirst()) {
+                    result = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME))
+                }
+            } catch (e: Exception) {
+                e.printStackTrace()
+            } finally {
+                cursor?.close()
+            }
+        }
+        if (result == null) {
+            result = uri.path
+            val cut = result!!.lastIndexOf(File.separator)
+            if (cut != -1) {
+                result = result.substring(cut + 1)
+            }
+        }
+        return result
+    }
+
+    /**
+     * 根据uri获取真文件路径
+     * @param context
+     * *
+     * @param contentUri
+     * *
+     * @return
+     */
+    internal fun getRealPathFromURI(context: Context, contentUri: Uri): String {
+        val cursor = context.contentResolver.query(contentUri, null, null, null, null)
+        if (cursor == null) {
+            return contentUri.path
+        } else {
+            cursor.moveToFirst()
+            val index = cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA)
+            val realPath = cursor.getString(index)
+            cursor.close()
+            return realPath
+        }
+    }
+
+    internal fun rename(file: File, newName: String): File {
+        val newFile = File(file.parent, newName)
+        if (newFile != file) {
+            if (newFile.exists()) {
+                if (newFile.delete()) {
+                    Log.d("FileUtil", "Delete old $newName file")
+                }
+            }
+            if (file.renameTo(newFile)) {
+                Log.d("FileUtil", "Rename file to " + newName)
+            }
+        }
+        return newFile
+    }
+
+    @Throws(IOException::class)
+    internal fun copy(input: InputStream, output: OutputStream): Int {
+        val count = copyLarge(input, output)
+        if (count > Integer.MAX_VALUE) {
+            return -1
+        }
+        return count.toInt()
+    }
+
+    @Throws(IOException::class)
+    @JvmOverloads internal fun copyLarge(input: InputStream, output: OutputStream, buffer: ByteArray = ByteArray(DEFAULT_BUFFER_SIZE)): Long {
+        var count: Long = 0
+        var n: Int
+        while (EOF != (n = input.read(buffer))) {
+            output.write(buffer, 0, n)
+            count += n.toLong()
+        }
+        return count
+    }
+
+    /**
+     * 文件是否存在
+     * @param path
+     * *
+     * @return
+     */
+    fun fileIsExists(path: String): Boolean {
+        try {
+            val f = File(path)
+            if (!f.exists()) {
+                return false
+            }
+        } catch (e: Exception) {
+
+            return false
+        }
+
+        return true
+    }
+}

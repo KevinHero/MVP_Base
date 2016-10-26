@@ -161,14 +161,10 @@
     </style>
 
 
-
-
     <style name="Theme.Start" parent="android:Theme">
         <item name="android:windowBackground">@color/colorPrimary</item>
         <item name="android:windowNoTitle">true</item>
     </style>
-
-
 
 
     <style name="PopupAnimation_up" mce_bogus="1"
